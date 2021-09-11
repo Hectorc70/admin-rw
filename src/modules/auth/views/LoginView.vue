@@ -1,34 +1,30 @@
 <template>
-    <div class="login" id="container">
-        <BackGround />
-        <div id="container-logo">
-            <img src="@/assets/logo_rw.png" alt="">
-        </div>
+    <div class="login">
+        <LogoImage />
+        <FormLogin />
     </div>
-    <!-- <FormLogin /> -->
 </template>
 <script>
-//import FormLogin from '@/modules/auth/components/FormLogin.vue'
-import BackGround from '@/modules/auth/components/BackGround.vue'
+//import BackGround from '../components/BackGround'
+import LogoImage from '../components/LogoImage'
+import FormLogin from '../components/FormLogin'
 
 
 export default {
-    name:'login',
-    Components:{
-        
-        BackGround
-    },
-    setup() {
-        
-    },
-}
+    name:'Login',
+    components:{
+        //BackGround,
+        LogoImage,
+        FormLogin
+    },setup() {},
+    
+};
 </script>
-
 <style scoped>
-    #container{
-        display: block;
-        max-width: 100%;
-        max-height: 100%;
-        background: blueviolet;
+    .login{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: white;
     }
 </style>

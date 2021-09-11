@@ -25,7 +25,7 @@ export default {
 
   :root{
     --color-primary:#4B82FF;
-    --color-secundario:#F1F5FF;
+    --color-secondary:#F1F5FF;
     --color-resalte:#D7C45F;
     --color-sombra-cards: #DBE6FF;
     --color-card:#FFFFFF;
@@ -39,6 +39,9 @@ export default {
   *{
   padding: 0px;
   margin: 0px;
+  }
+  html, body{
+    min-height:100vh;
   }
   
   input:focus{

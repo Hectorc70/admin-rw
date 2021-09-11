@@ -1,7 +1,7 @@
 <template>
     <div class="container-field">
         <label class="labe-field" for="{{textLabel}}">{{textLabel}}</label>
-        <input class="input-field" type="text">
+        <input class="input-field" type="text" :placeholder="textInt">
     </div>
     
 </template>
@@ -21,18 +21,18 @@ export default {
 .container-field{
     display: block;
     width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .labe-field{
     color: var(--color-texto);
     font-size: 1.0rem;
     font-family: var(--font-secondary);
+    margin-bottom: 5px;
 }
 .input-field{
     display: block;
-    background-color: #F7F7F7;
+    background-color: var(--color-secondary);
     width: 95%;
     height: 25px;
     padding: 2px;
@@ -40,9 +40,15 @@ export default {
     border-radius: .5em;
     text-align: left; 
     border:none;
-    color: #777777;
+    color: var(--color-primary);
     font-size: 1.0rem;
-    font-weight: bold;
+}
+
+.input-field::placeholder{
+    color: var(--color-texto);
+    font-size: .8rem;
+    font-family: 'Poppins';
+    font-weight:100
 }
 
 </style>

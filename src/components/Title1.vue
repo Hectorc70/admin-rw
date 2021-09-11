@@ -1,5 +1,5 @@
 <template>
-    <p class="title">{{TitleText}}</p>
+    <p class="title">{{titleText}}</p>
 </template>
 
 <script>
@@ -7,7 +7,7 @@
 
 export default ({
     props:{
-        TitleText:String
+        titleText:String
     },
     setup() {
     },

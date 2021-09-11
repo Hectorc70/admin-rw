@@ -26,7 +26,7 @@ export default {
   :root{
     --color-primary:#4B82FF;
     --color-secondary:#F1F5FF;
-    --color-resalte:#D7C45F;
+    --color-resalte:#01184C;
     --color-sombra-cards: #DBE6FF;
     --color-card:#FFFFFF;
     --color-texto: #79A2FF;

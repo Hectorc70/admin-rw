@@ -5,6 +5,10 @@
     <Line />
     <FieldForm textLabel="Usuario" textInt="Escribe tu Usuario" />
     <FieldForm textLabel="Contraseña" textInt="Escribe tu Contraseña" />
+    <div class="container-button">
+        <Button textButton="Login" />
+    </div>
+    
     </div>
     
 >
@@ -16,12 +20,14 @@
 import FieldForm from "@/components/FieldForm.vue";
 import Title1 from "@/components/Title1.vue";
 import Line from "./LineSeparator.vue";
+import Button from "@/components/ButtonSubmit.vue";
 
 export default {
   components: {
     FieldForm,
     Title1,
-    Line
+    Line,
+    Button
   },
   setup() {},
 };
@@ -45,6 +51,9 @@ background-color: var(--color-card);
 border-radius: 0.9em;
 box-shadow: 0px 0px 20px 5px var(--color-sombra-cards);
 
+}
+.container-button{
+    margin-top: 50px;
 }
 
 </style>

@@ -13,6 +13,7 @@
 //import BackGround from '../components/BackGround'
 import LogoImage from "../components/LogoImage";
 import FormLogin from "../components/FormLogin";
+//import useLogin from "../composables/useLogin";
 
 export default {
   name: "Login",
@@ -21,7 +22,8 @@ export default {
     LogoImage,
     FormLogin,
   },
-  setup() {},
+  setup() {
+  },
 };
 </script>
 <style scoped>

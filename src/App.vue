@@ -1,4 +1,5 @@
 <template>
+<!-- <notifications group="foo" /> -->
   <LoginView />
 </template>
 <script>

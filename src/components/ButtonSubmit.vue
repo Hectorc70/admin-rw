@@ -1,5 +1,5 @@
 <template>
-    <button class="button-submit" @click="functionButton">{{textButton}}</button>
+    <button type="submit" class="button-submit" @click="functionButton">{{textButton}}</button>
 </template>
 <script>
 
@@ -15,7 +15,7 @@ export default({
         }
     },
     setup() {
-        
+        return 
     },
 })
 </script>

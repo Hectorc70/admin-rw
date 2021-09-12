@@ -1,7 +1,7 @@
 <template>
     <div class="container-field">
         <label class="labe-field" for="{{textLabel}}">{{textLabel}}</label>
-        <input class="input-field" type="text" :placeholder="textInt">
+        <input :value = "value" @input="$emit('input', $event.target.value)" class="input-field" type="text" :placeholder="textInt">
     </div>
     
 </template>
@@ -10,10 +10,11 @@
 export default {
     props: {
     textLabel:String,
-    textInt:String
+    textInt:String,
+    value:String
+    
 },
     setup() {
-        
     },
 }
 </script>

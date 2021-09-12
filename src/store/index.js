@@ -1,11 +1,11 @@
 import { createStore } from 'vuex'
 
-import Auth from '@/modules/auth/store'
+import auth from '@/modules/auth/store'
 
 
 const store = createStore({
     modules: {
-        Auth
+        auth
     }
 })
 

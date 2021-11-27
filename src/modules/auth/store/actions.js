@@ -2,36 +2,38 @@
 
 // }
 
-//import authApi from "../api/authApi";
-import axios from "axios";
+import authApi from "../api/authApi";
 
-export const getTokenUser = async (/* {  commit }*/ ) => {
-    //const { idUser, password } = user;
+export const getTokenUser = async ({ commit }, user) => {
+    const { idUser, password } = user;
 
-    try {
-    const authApi = await axios.create({
-        baseURL:"https://rwapi.herokuapp.com/api/user/2225403176",
-        headers:{
-            'Authorization':'Token 25d2feed31bafd1a7ab15f4bda9fe116ca4ef12a',
-        }
+    const resp = await authApi.post("/api-token-auth/", {
+        username: idUser,
+        password: password,
     });
 
-    const resp = await authApi.get(
-        );
+    console.log(resp.status)
 
-/*     const resp = await authApi.get(
-        "https://rwapi.herokuapp.com/api/user/2225403176",
-        { 'headers': { 
+    if (resp.status == 200) {
+        const respUser = await authApi.get("/api/user/" + idUser, {
+        headers: {
+        Authorization: "Token " + resp.data["token"],
+        },
+        });
 
-            'Authorization': 'Token 25d2feed31bafd1a7ab15f4bda9fe116ca4ef12a',
-        } }
+        if(respUser.status == 200){
+            delete user.password
+            const token = resp.data["token"]
+            commit('loginUser',{
+                user,
+                token,
+            })
+            return { ok: true, message: respUser.data };
+        }
+        return { ok: false, message: respUser.data };
 
-        ); */
-    //console.log(authApi);
-    //mutation
-    return { ok: true, message: resp.data };
-    } catch (e) {
-    console.log(e);
-    return { ok: false, message: e };
     }
+    //mutation
+    return { ok: false, message: resp.data };
+    
 };

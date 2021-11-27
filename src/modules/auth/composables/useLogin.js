@@ -6,8 +6,6 @@ const UseLogin = () => {
     
     const login = async(user)=>{
         const resp = await store.dispatch('auth/getTokenUser', user)
-        
-        console.log(resp)
         return resp
     }
 

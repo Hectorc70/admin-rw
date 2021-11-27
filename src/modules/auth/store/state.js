@@ -4,7 +4,7 @@
 // })
 
 export default () => ({
-    status: 'auth',
+    status: 'no-auth',
     user:null,
     idToken:null,
     refreshToken:null

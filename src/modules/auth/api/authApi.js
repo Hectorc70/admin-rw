@@ -5,11 +5,9 @@ const authApi = axios.create({
     params:{
         
     },
-    headers:{
-        'Access-Control-Allow-Origin':'*',
-        'Content-Type':'multipart/form-data; boundary=something',
-        'Authorization':'Token 62dfd379af87f103c5c94106532bf124fa073111'
-    },
+    /* headers:{
+        'Authorization':'Token 25d2feed31bafd1a7ab15f4bda9fe116ca4ef12a'
+    }, */
     
 })
 

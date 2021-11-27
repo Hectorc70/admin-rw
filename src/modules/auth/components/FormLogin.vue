@@ -11,6 +11,7 @@
           class="input-field"
           type="text"
           placeholder="Escribe tu usuario"
+          required
         />
       </div>
       <div class="container-field">
@@ -20,6 +21,7 @@
           v-model="userForm.password"
           class="input-field"
           placeholder="Escribe tu contraseña"
+          required
         />
       </div>
       <div class="container-button">
@@ -32,12 +34,13 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref} from "vue";
 //import FieldForm from "@/components/FieldForm.vue";
 import Title1 from "@/components/Title1.vue";
 import Line from "./LineSeparator.vue";
 import Button from "@/components/ButtonSubmit.vue";
 import useLogin from '../composables/useLogin'
+import Swal from 'swetalert2'
 
 export default {
 
@@ -50,15 +53,17 @@ export default {
   setup() {
 	const {login} = useLogin()
     const userForm = ref({
-      idUser: "",
-      password: "",
+      idUser: '',
+      password: '',
     })
 
     return {
       userForm,
       onSubmit: async () => {
         const {ok, message} = await login(userForm.value)
-        console.log(ok, message)
+        if(!ok){
+          Swal.fire('Error',message,'error')
+        }
       },
     };
   },

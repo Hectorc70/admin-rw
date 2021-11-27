@@ -1,13 +1,14 @@
 //import { ref } from 'vue'
-//import { useStore} from 'vuex'
-//import axios from 'axios'
-
+import { useStore} from 'vuex'
 
 const UseLogin = () => {
-    //const store =  useStore();
-
+    const store =  useStore();
+    
     const login = async(user)=>{
-        console.log(user)
+        const resp = await store.dispatch('auth/getTokenUser', user)
+        
+        console.log(resp)
+        return resp
     }
 
     return {

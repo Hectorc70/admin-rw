@@ -16,6 +16,7 @@
       <div class="container-field">
         <label class="labe-field" for="password">Password</label>
         <input
+          type="password"
           v-model="userForm.password"
           class="input-field"
           placeholder="Escribe tu contraseña"
@@ -51,12 +52,13 @@ export default {
     const userForm = ref({
       idUser: "",
       password: "",
-    });
+    })
 
     return {
       userForm,
       onSubmit: async () => {
-		login(userForm)
+        const {ok, message} = await login(userForm.value)
+        console.log(ok, message)
       },
     };
   },

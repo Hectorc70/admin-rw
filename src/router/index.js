@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-
+import LoginView from '@/modules/auth/views/LoginView.vue'
 const routes = [
   {
     path: '/',
     name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '@/modules/auth/views/FormLoginView.vue')
+    component: LoginView
   } 
 ]
 

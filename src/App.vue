@@ -1,30 +1,54 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+<!-- <notifications group="foo" /> -->
+  <LoginView />
 </template>
+<script>
+  import LoginView from '@/modules/auth/views/LoginView.vue'
+export default {
+  components:{
+    LoginView
+  },
+  setup() {},
+};
+</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style >
+
+  @font-face{
+      font-family: "Poppins";
+      src: url("fonts/Poppins/Poppins-Regular.ttf");
+  }
+
+  @font-face{
+      font-family: "Poppins-Bold";
+      src: url("fonts/Poppins/Poppins-Bold.ttf");
+  }
+
+  :root{
+    --color-primary:#4B82FF;
+    --color-secondary:#F1F5FF;
+    --color-resalte:#01184C;
+    --color-sombra-cards: #DBE6FF;
+    --color-card:#FFFFFF;
+    --color-texto: #79A2FF;
+
+    --font-primary:"Poppins-Bold";
+    --font-secondary:"Poppins";
+
+  }
+
+  *{
+  padding: 0px;
+  margin: 0px;
+  }
+  html, body{
+    min-height:100vh;
+  }
+  
+  input:focus{
+    outline: none;
+    outline-width: 0;
+    
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

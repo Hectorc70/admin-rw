@@ -1,15 +1,9 @@
 <template>
 <!-- <notifications group="foo" /> -->
-  <LoginView />
+  <router-view/>
 </template>
 <script>
-  import LoginView from '@/modules/auth/views/LoginView.vue'
-export default {
-  components:{
-    LoginView
-  },
-  setup() {},
-};
+
 </script>
 
 <style >

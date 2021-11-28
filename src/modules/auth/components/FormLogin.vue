@@ -25,7 +25,7 @@
         />
       </div>
       <div class="container-button">
-        <Button textButton="Login" functionButton="{}" />
+        <Button textButton="Login"  />
       </div>
     </form>
 
@@ -35,6 +35,7 @@
 
 <script>
 import { ref} from "vue";
+import {useRouter} from 'vue-router';
 //import FieldForm from "@/components/FieldForm.vue";
 import Title1 from "@/components/Title1.vue";
 import Line from "./LineSeparator.vue";
@@ -51,6 +52,7 @@ export default {
     Button,
   },
   setup() {
+    const router = useRouter()
 	const {login} = useLogin()
     const userForm = ref({
       idUser: '',
@@ -61,11 +63,15 @@ export default {
       userForm,
       onSubmit: async () => {
         const {ok, message} = await login(userForm.value)
-        if(!ok){
-          Swal.fire('Error',message,'error')
+        
+        if(ok){
+          console.log(ok)
+          router.push({name:'Home'})
+          
         }else{
-          router.pus({name})
-        }
+          return Swal.fire('Error',message,'error')
+        } 
+        
       },
     };
   },

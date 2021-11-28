@@ -5,8 +5,18 @@ const UseLogin = () => {
     const store =  useStore();
     
     const login = async(user)=>{
-        const resp = await store.dispatch('auth/getTokenUser', user)
-        return resp
+        await store.dispatch('auth/getTokenUser', user)
+        .catch(function (error){
+            console.log(error)
+            return { ok: false, message:error}
+        })
+        .then(function (resp){
+            console.log(resp)
+            return resp;
+        }).finally((resp)=>resp
+
+        )
+        
     }
 
     return {

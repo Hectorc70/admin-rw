@@ -39,8 +39,8 @@ import { ref} from "vue";
 import Title1 from "@/components/Title1.vue";
 import Line from "./LineSeparator.vue";
 import Button from "@/components/ButtonSubmit.vue";
-import useLogin from '../composables/useLogin'
-import Swal from 'swetalert2'
+import useLogin from '../composables/useLogin';
+import Swal from 'sweetalert2';
 
 export default {
 
@@ -63,6 +63,8 @@ export default {
         const {ok, message} = await login(userForm.value)
         if(!ok){
           Swal.fire('Error',message,'error')
+        }else{
+          router.pus({name})
         }
       },
     };
